@@ -1,0 +1,23 @@
+<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8"?>&ndash;&gt;-->
+<!--&lt;!&ndash;<beans xmlns="http://www.springframework.org/schema/beans"&ndash;&gt;-->
+<!--&lt;!&ndash;       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&ndash;&gt;-->
+<!--&lt;!&ndash;       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">&ndash;&gt;-->
+
+<!--&lt;!&ndash;</beans>&ndash;&gt;-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://code.alibabatech.com/schema/dubbo
+                           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--  dubbo基础配置  -->
+    <dubbo:application name="consumer" owner="consumer"/>
+
+    <!-- 修正了 dubbo:application 的配置格式 -->
+<!--    <dubbo:protocol name="dubbo" port="20881"/>-->
+    <dubbo:registry protocol="zookeeper" address="localhost:2181" file="C:\Users\super\.dubbo\test\consumer\registry.cache"/>
+    <!--  dubbo基础配置  -->
+    <dubbo:reference id="TestUser" interface="com.test.Test.TestUser" timeout="6000000" lazy="true" check="false"/>
+</beans>

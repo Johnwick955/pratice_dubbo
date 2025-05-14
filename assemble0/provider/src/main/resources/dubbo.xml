@@ -1,0 +1,15 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--</beans>-->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--  dubbo基础配置  -->
+    <dubbo:application name="provider" owner="provider"/>
+    <dubbo:protocol name="dubbo" port="20883"/>
+    <dubbo:registry protocol="zookeeper" address="localhost:2181" file="C:\Users\super\.dubbo\test\provider\registry.cache"/>
+    <!--  dubbo基础配置  -->
+    <dubbo:reference id="TestUser" interface="com.test.Test.TestUser" timeout="600000000" lazy="true" check="false"/>
+</beans>

@@ -1,0 +1,29 @@
+
+server:
+  port: 8079
+
+#dubbo:
+#  registry:
+#    address: zookeeper://localhost:2181
+#  application:
+#    name: provider-service
+#  protocol:
+#    name: dubbo
+#    port: 20880
+#  scan:
+#    base-packages: com.test.provider
+#    provider:
+#      check: false  # 启动时不检查提供者是否可用
+#      timeout: 3000  # 调用超时时间(毫秒)
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root0
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  file:
+    path: /var/log/myapp
+    name: myapp.log

@@ -1,0 +1,25 @@
+
+server:
+  port: 8076
+
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+#dubbo:
+#  registry:
+#    address: zookeeper://localhost:2181
+#  application:
+#    name: consumer
+#  protocol:
+#    port: -1
+##  qos-port: 22223 # 修改QoS端口（默认22222）
+#  qos-enable: false # 临时禁用QoS（生产环境不建议）
+#  cache:
+#    directory: ${user.home}/.dubbo/${spring.application.name}
+#  reference:
+#    TestUser:
+#      interface: com.test.Test.TestUser
+#      timeout: 600000
+#      check: false
